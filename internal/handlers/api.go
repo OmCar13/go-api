@@ -1,17 +1,16 @@
 package handlers
 
 import (
-	"../internal/middleware"
-	"github.com/go-chi/chi"
-	chimiddle "github.com/go-chi/chi/middlerware"
-)
+	"github.com/OmCar13/go-api/internal/middleware"
+    "github.com/go-chi/chi"
+    chimiddleware "github.com/go-chi/chi/middleware"
 
 func Handler(r *chi.Mux) {
 	r.Use(chimiddle.StripSlashes)
 
 	r.Route("/account", func(router chi.Router) {
 
-		router.use(middleware.Authoriation)
+		router.Use(middleware.Authoriation)
 
 		router.Get("/coins", GetCoinBalance)
 	})
