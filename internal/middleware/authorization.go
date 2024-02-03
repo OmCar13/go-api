@@ -4,8 +4,10 @@ import (
 	"errors"
 	"net/http"
 
-	"../internal/tools"
-	"./api"
+	"https://github.com/OmCar13/go-api/tree/main/internal/tools"
+
+	"https://github.com/OmCar13/go-api"
+
 	log "github.com/sirupsen/logrus"
 )
 
