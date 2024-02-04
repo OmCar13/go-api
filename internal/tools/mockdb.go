@@ -1,4 +1,4 @@
-package tools 
+package tools
 
 import (
 	"time"
@@ -8,31 +8,31 @@ type mockDB struct{}
 
 var mockLoginDetails = map[string]LoginDetails{
 	"Omkar": {
-		AuthToken:	"123ABC",
-		Username:	"omkar",
+		AuthToken: "123ABC",
+		Username:  "omkar",
 	},
 	"Kushal": {
-		AuthToken: 	"456DEF",
-		Username:	"kaushal",
+		AuthToken: "456DEF",
+		Username:  "kushal",
 	},
 	"Jack": {
-		AuthToken:	"789GHI",
-		Username:	"jack",
+		AuthToken: "789GHI",
+		Username:  "jack",
 	},
 }
 
 var mockCoinDetails = map[string]CoinDetails{
 	"Omkar": {
-		Coins:		"100",
-		Username:	"omkar",
+		Coins:    100,
+		Username: "omkar",
 	},
 	"Kushal": {
-		Coins:	 	"200",
-		Username:	"kaushal",
+		Coins:    200,
+		Username: "kushal",
 	},
 	"Jack": {
-		Coins:		"300",
-		Username:	"jack",
+		Coins:    300,
+		Username: "jack",
 	},
 }
 
@@ -55,7 +55,7 @@ func (d *mockDB) GetUserCoins(username string) *CoinDetails {
 
 	var clientData = CoinDetails{}
 	clientData, ok := mockCoinDetails[username]
-	if != ok {
+	if !ok {
 		return nil
 	}
 
@@ -63,5 +63,5 @@ func (d *mockDB) GetUserCoins(username string) *CoinDetails {
 }
 
 func (d *mockDB) SetupDatabase() error {
-	return nil 
+	return nil
 }

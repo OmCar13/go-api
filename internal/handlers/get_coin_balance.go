@@ -4,7 +4,9 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/OmCar13/go-api"
+	"goapi/api"
+	"goapi/internal/tools"
+
 	"github.com/gorilla/schema"
 	log "github.com/sirupsen/logrus"
 )
@@ -14,7 +16,7 @@ func GetCoinBalance(w http.ResponseWriter, r *http.Request) {
 	var decoder *schema.Decoder = schema.NewDecoder()
 	var err error
 
-	err = decoder.Decoder(&params, r.URL.Query())
+	err = decoder.Decode(&params, r.URL.Query())
 
 	if err != nil {
 		log.Error(err)

@@ -4,7 +4,7 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-type loginDetails struct {
+type LoginDetails struct {
 	AuthToken string
 	Username  string
 }
@@ -24,7 +24,7 @@ func NewDatabase() (*DatabaseInterface, error) {
 
 	var database DatabaseInterface = &mockDB{}
 
-	var err error = databse.SetupDatabase()
+	var err error = database.SetupDatabase()
 	if err != nil {
 		log.Error(err)
 		return nil, err

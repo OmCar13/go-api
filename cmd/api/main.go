@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/OmCar13/go-api/tree/main/internal/handlers"
+	"goapi/internal/handlers"
+
 	"github.com/go-chi/chi"
 	log "github.com/sirupsen/logrus"
 )
 
-func main(){
+func main() {
 
 	log.SetReportCaller(true)
 	var r *chi.Mux = chi.NewRouter()
@@ -17,9 +18,8 @@ func main(){
 
 	fmt.Println("Starting GO API service...")
 
-}
-
-err := http.ListenAndServe("localhost:8000", r)
-if err != nil {
-	log.Error(err)
+	err := http.ListenAndServe("localhost:8000", r)
+	if err != nil {
+		log.Error(err)
+	}
 }
